@@ -8,14 +8,15 @@ const myFilter = function (callback, context) {
    }
    return newArr
 }
-Array.prototype.myFilter = myFilter;
+Array.prototype.myFilter = myFilter
+
 function createDebounceFunction (linkFunc, ms ){
    return function (args) {
-      let previousCall = this.lastCall;
-      this.lastCall = Date.now();
+      let previousCall = this.lastCall
+      this.lastCall = Date.now()
       if (previousCall && ((this.lastCall - previousCall) <= linkFunc)) {
-        clearTimeout(this.lastCallTimer);
+        clearTimeout(this.lastCallTimer)
       }
-      this.lastCallTimer = setTimeout(() => linkFunc(args), ms);
+      this.lastCallTimer = setTimeout(() => linkFunc(args), ms)
     }
 }
